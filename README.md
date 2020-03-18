@@ -1,6 +1,6 @@
 # weixin
 (python) 使用window微信客服端向指定用户/群发送信息
-代码用到了，OpenCV和操作模拟（用来模拟人为的操作）
+代码用到了，OpenCV和操作模拟（用来模拟人为的操作）\n
 初始化class时，传入本地微信客服端所在的目录
 eg:wechat = wechat('C:\Program Files (x86)\Tencent\WeChat')
 #打开微信
