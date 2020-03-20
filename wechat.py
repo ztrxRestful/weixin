@@ -2,6 +2,7 @@ import cv2 as cv
 import pyautogui
 import pyperclip
 import os
+import time
 
 from PIL import ImageGrab
 
@@ -66,6 +67,7 @@ class wechat():
         file = os.popen(cmd)
         #print(file)
         file.close()
+        time.sleep(2)
 
     def send_msg_obj(self,name):
         # res_name = gitBigImg.git_src_img("temp2")
