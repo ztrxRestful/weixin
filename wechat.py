@@ -110,7 +110,7 @@ if __name__ == '__main__':
     #使用class时，需要初始化微信的所在位置
     wechat = begin('C:\Program Files (x86)\Tencent\WeChat')
     wechat.open_wechat()
-    wechat.send_msg_obj('Hammer')
+    wechat.send_msg_obj('测试目标')
     wechat.send_msg('测试一下')
     wechat.huang_hang()
     wechat.send_msg('再来一遍')
