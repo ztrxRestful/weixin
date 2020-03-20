@@ -6,7 +6,7 @@ import time
 
 from PIL import ImageGrab
 
-class wechat():
+class begin():
     def __init__(self,wechat_path):
         self.wechat_path = wechat_path
 
@@ -108,10 +108,11 @@ class wechat():
 
 if __name__ == '__main__':
     #使用class时，需要初始化微信的所在位置
-    wechat = wechat('C:\Program Files (x86)\Tencent\WeChat')
+    wechat = begin('C:\Program Files (x86)\Tencent\WeChat')
     wechat.open_wechat()
     wechat.send_msg_obj('Hammer')
     wechat.send_msg('测试一下')
     wechat.huang_hang()
     wechat.send_msg('再来一遍')
     wechat.send()
+
