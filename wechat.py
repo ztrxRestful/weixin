@@ -6,7 +6,7 @@ import time
 
 from PIL import ImageGrab
 
-class begin():
+class wechat():
     def __init__(self,wechat_path):
         self.wechat_path = wechat_path
 
@@ -57,13 +57,13 @@ class begin():
         x, y = self.check_img(obj_path, src_path)
 
         # pyautogui.hotkey('win','d')
-        pyautogui.PAUSE = 1.0
+        time.sleep(1)
         # pyautogui.moveTo(res[0][0],res[0][1],duration=2)
         pyautogui.doubleClick(x, y)
 
     def open_wechat(self):
         pyautogui.hotkey('win', 'd')
-        cmd = self.wechat_path+'\WeChat.exe'
+        cmd = self.wechat_path+''
         file = os.popen(cmd)
         #print(file)
         file.close()
@@ -78,15 +78,14 @@ class begin():
         obj_path = self.path+'/image/lan.jpg'
         x, y = self.find_image(obj_path, src_path)
         pyautogui.click(x, y)
-        pyautogui.PAUSE = 1.0
+        time.sleep(1)
 
         pyperclip.copy(name)
 
         pyautogui.hotkey('ctrl', 'v')
+        time.sleep(1)
         #print(x,y)
-        y = y+100
-        #print(x,y)
-        pyautogui.click(x, y)
+        pyautogui.hotkey('enter')
 
     '''
     需要发送的信息文本
@@ -108,11 +107,10 @@ class begin():
 
 if __name__ == '__main__':
     #使用class时，需要初始化微信的所在位置
-    wechat = begin('C:\Program Files (x86)\Tencent\WeChat')
+    wechat = wechat('C:\\Program Files (x86)\\Tencent\\WeChat\\WeChat.exe')
     wechat.open_wechat()
     wechat.send_msg_obj('测试目标')
     wechat.send_msg('测试一下')
     wechat.huang_hang()
     wechat.send_msg('再来一遍')
     wechat.send()
-
